@@ -2,10 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import { Image } from "astro:assets";
+import type { ACTION_ERROR_CODES } from "astro:actions";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -25,6 +29,18 @@ const last_posts = posts.slice(0, 3);
     </div>
   
     <div class="time-line-container mb-10">
+      <TimeLineElement
+        title="Senior Software Engineer, Fabric"
+        subtitle="July 2024 - Present"
+        location= "Brooklyn, NY"
+      >
+      <ul>
+       <li>
+        Improving page load times, modernizing monorepo practices, and building features.
+      </li> <br>
+      </ul>
+      </TimeLineElement>
+
       <TimeLineElement
         title="Lead Software Engineer, Greenlight Financial Technology"
         subtitle="May 2021 - May 2024"
