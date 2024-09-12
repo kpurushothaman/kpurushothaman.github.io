@@ -16,14 +16,14 @@ It's been interesting working with AWS more directly. For the past 3 years of my
 
 ### What does a server look like?
 
-When I was at Talent, we had a couple of PHP monolith-type services, a couple of Go services, and a dozen or so lambdas for cron-type jobs. At the time, I remember thinking "huh, that's interesting -- lambas are super cheap. I wonder if you could build an HTTP server off of them."
+When I was at Talent, we had a couple of PHP monolith-type services, a couple of Go services, and a dozen or so lambdas for cron-type jobs. At the time, I remember thinking "huh, that's interesting -- lambdas are super cheap. I wonder if you could build an HTTP server off of them."
 
 As it turns out, you can! Is it a good idea? Maybe.
 
 With a traditional containerized service, you write some code, chuck it into a container, and then (if you're fancy) configure some way to determine at execution time if you need more containers of your service spun up to respond to increased traffic. Similarly, you can kill containers to save money if you're in a lull.
 
 With a lambda, you're only paying for the execution of a given function. So a "route" for an HTTP server could instead look like this:
-![cool](/public/API-to-Lambda.svg)
+![cool](../../../public/API-to-Lambda.svg)
 
 Compared to EC2 instances, this is pretty cheap. And it scales without you having to think about it.
  
