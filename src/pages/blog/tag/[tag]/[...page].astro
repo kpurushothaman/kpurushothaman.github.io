@@ -5,20 +5,20 @@ import { getCollection } from "astro:content";
 import createSlug from "../../../../lib/createSlug";
 
 export async function getStaticPaths({ paginate }) {
-  const all_posts = await getCollection("blog");
-  const all_tags = all_posts.flatMap((post) => {
-    return post.data.tags || [];
-  });
+	const all_posts = await getCollection("blog");
+	const all_tags = all_posts.flatMap((post) => {
+		return post.data.tags || [];
+	});
 
-  return all_tags.flatMap((tag) => {
-    const filtred_posts = all_posts.filter((post) => {
-      return post.data.tags?.includes(tag);
-    });
-    return paginate(filtred_posts, {
-      params: { tag },
-      pageSize: 10,
-    });
-  });
+	return all_tags.flatMap((tag) => {
+		const filtred_posts = all_posts.filter((post) => {
+			return post.data.tags?.includes(tag);
+		});
+		return paginate(filtred_posts, {
+			params: { tag },
+			pageSize: 10,
+		});
+	});
 }
 
 const { page } = Astro.props;
@@ -27,7 +27,7 @@ const params = Astro.params;
 
 <BaseLayout title={"Blog - " + params.tag} sideBarActiveItemID="blog">
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Blog - {params.tag}</div>
+    <div class="text-3xl w-full font-bold">{params.tag}</div>
   </div>
   {
     page.data.length === 0 ? (

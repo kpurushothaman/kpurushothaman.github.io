@@ -2,8 +2,7 @@
 title: "Work Musings: AWS Lambdas"
 description: "A jumping off point for my screeds"
 pubDate: "Aug 29 2024"
-heroImage: "/Gordon_HL1_promo.webp"
-tags: ["professional", "opinions"]
+tags: ["professional"]
 ---
 
 

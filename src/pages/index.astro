@@ -30,8 +30,32 @@ const last_posts = posts.slice(0, 3);
   
     <div class="time-line-container mb-10">
       <TimeLineElement
+        title="Staff Software Engineer, Fabric"
+        subtitle="July 2025 - Present"
+        location= "Brooklyn, NY"
+      >
+      <ul>
+        <li>
+          Onboarded the rest of my team to the architecture I proposed and built, cutting deploy time down from ~40 minutes to under 10 minutes for all developers on my team.
+        </li> <br>
+        <li>
+          In that new architecture, built money movement orchestration services to facilitate launching a new savings account product, allowing the company to launch the feature within an aggressive timeline.
+        </li><br>
+        <li>
+          Designed and implemented new, relational schemas for onboarding and payment data. Guided the team to extend this data modeling approach. 
+        </li><br>
+        <li>
+          Worked across teams to design and make recommendations for system-wide session timeouts to improve our security posture.
+        </li><br>
+        <li>
+          Championed observability and devEx improvements throughout the process, ensuring that the team wasn't held back by poor tooling.
+        </li><br>
+      </ul>
+      </TimeLineElement>
+
+      <TimeLineElement
         title="Senior Software Engineer, Fabric"
-        subtitle="July 2024 - Present"
+        subtitle="July 2024 - July 2025"
         location= "Brooklyn, NY"
       >
       <ul>
@@ -182,11 +206,11 @@ const last_posts = posts.slice(0, 3);
     </ul>
   </div>
   
-  <div>
+  <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Thoughts</div>
-  </div>
+  </div> -->
 
-  {
+  <!-- {
     last_posts.map((post) => (
       <>
         <HorizontalCard
@@ -200,5 +224,5 @@ const last_posts = posts.slice(0, 3);
         <div class="divider my-0" />
       </>
     ))
-  }
+  } -->
 </BaseLayout>
